@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.demo2.mapper.UserMapper">
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="org.example.demo2.entity.User"
+            databaseId="mysql">
+        select id, age from TB_USER where id = #{id}
+    </select>
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="org.example.demo2.entity.User"
+            databaseId="sqlserver">
+        select id, name from TB_USER where id = #{id}
+    </select>
+
+
+</mapper>

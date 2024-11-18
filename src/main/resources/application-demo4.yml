@@ -1,0 +1,10 @@
+spring:
+  datasource:
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://localhost:1433;databaseName=switch_database_demo;encrypt=true;trustServerCertificate=true;
+#    username: sa
+#    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/switch_database_demo?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1234
