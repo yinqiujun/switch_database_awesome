@@ -7,4 +7,4 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/switch_database_demo?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: 1234

@@ -1,6 +1,6 @@
-# 如何优雅的切换数据库
+# ⚔️如何优雅的切换数据库
 
-### service层添加if判断
+### 1️⃣service层添加if判断
 
 在定义mapper时，针对不同类型的数据库定义不同的sql语句
 
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
 
 
-### DatabaseIdProvider & databaseId
+### 2️⃣DatabaseIdProvider & databaseId
 
 如果项目使用的是xml进行sql语句管理，可以使用mybatis原生提供的多数据库支持
 
@@ -105,7 +105,7 @@ public interface UserMapper {
 
 
 
-### 不同的实现类
+### 3️⃣不同的实现类
 
 对于第一种方式，当然也有解耦的办法：使用不同的service实现类，然后根据条件加载不同的bean，从而注入不同数据库需要的bean
 
@@ -131,7 +131,6 @@ public interface UserMapperSqlServer {
     @Select("select id, name from TB_USER where id = #{id}")
     User getUserById(@Param("id") Integer id);
 }
-
 ```
 
 
@@ -164,7 +163,7 @@ public interface UserMapperMysql {
 
 
 
-### 根据条件扫描不同的包
+### 4️⃣根据条件扫描不同的包
 
 这种方式使用的是同一个service的实现类，不同的是控制不同的mapper扫描最终注入不同的mapper实现，本质和第三种方式是一样的
 
@@ -178,7 +177,7 @@ public class MysqlMyBatisConfig {
     // 配置 SQL Server 的 SqlSessionFactory
     @PostConstruct
     public void init() {
-        System.out.println("SqlServer MyBatis 配置加载成功");
+        System.out.println("mysql MyBatis 配置加载成功");
     }
 }
 ```
